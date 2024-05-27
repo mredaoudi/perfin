@@ -5,7 +5,7 @@
 {% block content %}
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Entities</h1>
-    <a class="btn btn-primary" href="{% url 'entity-create' %}"><i class="fas fa-plus"></i></a>
+    <a class="btn btn-primary" href="{% url 'entity-create' %}">Add</a>
 </div>
 <div class="row">
     <table class="table">
@@ -23,11 +23,11 @@
           <tr>
             <td>{{ e.name }}</td>
             <td>{{ e.category }}</td>
-            <td><i class="fas {% if e.is_person %}fa-user{% else %}fa-building{% endif %}"></i></td>
+            <td>{% if e.is_person %}Person{% else %}Non-person{% endif %}"></td>
             <td>{{ e.amount_spent }}</td>
             <td>
-                <a href="{% url 'entity-update' e.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-                <a href="#" onclick="deleteModel({{ e.id }}, 'entities'); return false;" class="btn btn-danger"><i class="fa fa-times"></i></a>
+                <a href="{% url 'entity-update' e.id %}" class="btn btn-primary">Edit</a>
+                <a href="#" onclick="deleteModel({{ e.id }}, 'entities'); return false;" class="btn btn-danger">Delete</a>
             </td>
           </tr>
         {% endfor %}

@@ -5,7 +5,7 @@
 {% block content %}
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Accounts</h1>
-    <a class="btn btn-primary" href="{% url 'account-create' %}"><i class="fas fa-plus"></i></a>
+    <a class="btn btn-primary" href="{% url 'account-create' %}">Add</a>
 </div>
 <div class="row">
   <table class="table">
@@ -23,13 +23,13 @@
     {% for a in accounts %}
       <tr>
         <td>{{ a.name }}</td>
-        <td><i class="fas {% if a.is_saving %}fa-piggy-bank{% else %}fa-credit-card{% endif %}"></i></td>
+        <td>{% if a.is_saving %}Saving{% else %}Checking{% endif %}</td>
         <td>{{ a.initial_amount }}</td>
         <td>{{ a.current_amount }}</td>
         <td>{{ a.start_date }}</td>
         <td>
-            <a href="{% url 'account-update' a.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-            <a href="#" onclick="deleteModel({{ a.id }}, 'accounts'); return false;" class="btn btn-danger"><i class="fa fa-times"></i></a>
+            <a href="{% url 'account-update' a.id %}" class="btn btn-primary">Edit</a>
+            <a href="#" onclick="deleteModel({{ a.id }}, 'accounts'); return false;" class="btn btn-danger">Delete</a>
         </td>
       </tr>
     {% endfor %}
