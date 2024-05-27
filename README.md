@@ -1,4 +1,4 @@
-# PerFin: A personal finance app made with Django
+# Perfin: A personal finance app made with Django
 
 This is a side project I built to sharpen my Django skills and also help me with my finances since I got sick of doing everything
 on a spreadsheet.
