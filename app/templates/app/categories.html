@@ -1,0 +1,33 @@
+{% extends "app/base.html" %}
+
+{% block title %}Categories - PerFin{% endblock %}
+
+{% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Categories</h1>
+    <a class="btn btn-primary" href="{% url 'category-create' %}"><i class="fas fa-plus"></i></a>
+</div>
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            {% if user.is_staff %}<th scope="col" class="col-2">Actions</th>{% endif %}
+          </tr>
+        </thead>
+        <tbody>
+        {% for c in categories %}
+          <tr>
+            <td>{{ c.name }}</td>
+            {% if user.is_staff %}
+            <td>
+                <a href="{% url 'category-update' c.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                <a href="#" onclick="deleteModel({{ c.id }}, 'categories'); return false;" class="btn btn-danger"><i class="fa fa-times"></i></a>
+            </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

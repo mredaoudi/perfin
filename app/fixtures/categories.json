@@ -1,0 +1,110 @@
+[
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Rent"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Utilities"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Family & Friends"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Salary"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Health"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Government"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Groceries"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Restaurant"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Shopping"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Sports & Outdoors"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Travel & Vacation"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Multimedia"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Subscriptions"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Parking"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Fuel"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Insurance"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Charity"
+        }
+    },
+    {
+        "model": "app.category",
+        "fields": {
+          "name": "Investment"
+        }
+    }
+]

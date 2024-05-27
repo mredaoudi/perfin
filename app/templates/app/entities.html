@@ -1,0 +1,37 @@
+{% extends "app/base.html" %}
+
+{% block title %}Entities - PerFin{% endblock %}
+
+{% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Entities</h1>
+    <a class="btn btn-primary" href="{% url 'entity-create' %}"><i class="fas fa-plus"></i></a>
+</div>
+<div class="row">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Type</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for e in entities %}
+          <tr>
+            <td>{{ e.name }}</td>
+            <td>{{ e.category }}</td>
+            <td><i class="fas {% if e.is_person %}fa-user{% else %}fa-building{% endif %}"></i></td>
+            <td>{{ e.amount_spent }}</td>
+            <td>
+                <a href="{% url 'entity-update' e.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                <a href="#" onclick="deleteModel({{ e.id }}, 'entities'); return false;" class="btn btn-danger"><i class="fa fa-times"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

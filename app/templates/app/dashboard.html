@@ -1,0 +1,56 @@
+{% extends "app/base.html" %}
+{% load string_utils %}
+
+{% block title %}Dashboard - PerFin{% endblock %}
+
+{% block content %}
+<h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+
+<div class="chart-container" style="display: flex; justify-content: space-between;">
+  <div class="chart" style="flex: 1; margin-right: 10px;">
+      <canvas id="barChart"></canvas>
+  </div>
+</div>
+{% endblock content%}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const bar = document.getElementById('barChart');
+
+    const categoryNames = {{ categories_info.keys|to_list|safe }}
+    const categoryAmounts = {{ categories_info.values|to_list|safe }}
+
+    new Chart(bar, {
+      type: 'bar',
+      data: {
+        labels: categoryNames,
+        datasets: [{
+          label: 'Spending',
+          data: categoryAmounts,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)'
+          ],
+          borderWidth: 1,
+          borderSkipped: false,
+          borderRadius: 10
+        }],
+      },
+    });
+  </script>
+{% endblock script %}

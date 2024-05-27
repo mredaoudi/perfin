@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load string_utils %}
+
+{% block title %}{{ request.resolver_match.url_name|titlefy }} - PerFin{% endblock title %}
+
+{% block content %}
+<div>
+    <form action="{{ request.path }}" method="post">
+        {% csrf_token %}
+        <div class="form-row align-items-center">
+        {% for field in form %}
+            <div class="my-3 col-md-6">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                <p class="help" id="{{ field.auto_id }}_helptext">
+                    {{ field.help_text|safe }}
+                </p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="daoudi.dev">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'app/img/perfin.svg'%}">
+
+    <title>Perfin: Personal Finance Made Easy</title>
+
+    <link rel="stylesheet" href="{% static 'app/css/landing.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+</head>
+
+<body class="body">
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'app/img/perfin.svg' %}" alt="Logo" class="logo">
+            <span class="logo-text">Perfin</span>
+        </div>
+        <a href="login/" class="login-button">Login</a>
+    </nav>
+
+    <main class="main-content">
+        <img class="screenshot" src="{% static 'app/img/screen.png' %}" alt="Screenshot">
+        <h1 class="title">Perfin: Personal Finance Made Easy</h1>
+        <p class="subtitle">Made with passion and Django.<br>
+            <a class="subtitle" href="https://github.com/mredaoudi/perfin">Source Code</a>
+        </p>
+    </main>
+
+    <footer class="footer">
+        2024 Perfin. Free and open-source.
+    </footer>
+</body>
+</html>
