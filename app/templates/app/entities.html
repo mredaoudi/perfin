@@ -23,7 +23,7 @@
           <tr>
             <td>{{ e.name }}</td>
             <td>{{ e.category }}</td>
-            <td>{% if e.is_person %}Person{% else %}Non-person{% endif %}"></td>
+            <td>{% if e.is_person %}Person{% else %}Non-person{% endif %}</td>
             <td>{{ e.amount_spent }}</td>
             <td>
                 <a href="{% url 'entity-update' e.id %}" class="btn btn-primary">Edit</a>
