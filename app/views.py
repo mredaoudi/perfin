@@ -44,7 +44,7 @@ class AccountListView(LoginRequiredMixin, ListView):
         return Account.objects.filter(user=self.request.user)
 
 
-class AccountCreateUpdateView(LoginRequiredMixin, CreateUpdateView):
+class AccountCreateUpdateView(SetUserMixin, CreateUpdateView):
     model = Account
     form_class = AccountForm
     template_name = 'app/form.html'
